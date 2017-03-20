@@ -24,7 +24,6 @@
     - postgresql-client-9.6
     - htop
     - xclip
-    - aescrypt
 
 - name: Install desktop tools
   apt:

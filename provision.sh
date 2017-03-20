@@ -16,5 +16,5 @@ sudo apt-get -y install ansible openssh-server git
 #echo "ALL            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers.d/000_nopasswd_all
 
 # Run the Ansible provisioning playbook.
-ansible-playbook site.yml -i ./hosts
+ansible-playbook local.yml -i ./hosts
 

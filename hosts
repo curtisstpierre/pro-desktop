@@ -1,0 +1,3 @@
+[localhost]
+127.0.0.1		ansible_user=doug		ansible_ssh_pass=arkR@1der
+

@@ -1,0 +1,24 @@
+---
+- name: Add the GPG key for the official Docker repository
+  apt_key:
+    keyserver: p80.pool.sks-keyservers.net:80
+    id: 58118E89F3A912897C070ADBF76221572C52609D
+
+- name: Add the Docker repository to APT sources
+  apt_repository:
+    repo: deb https://apt.dockerproject.org/repo ubuntu-xenial main
+    state: present
+
+- name: Update the package database with the Docker packages
+  apt:
+    update_cache: yes
+
+- name: Install docker
+  apt:
+    name: docker-engine
+    state: present
+
+- name: Install docker-py (Python)
+  pip:
+    name: docker-py
+

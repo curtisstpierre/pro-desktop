@@ -1,0 +1,12 @@
+---
+- name: Pull the Python 3.6 Docker image
+  docker_image:
+    name: python:3.6
+
+- name: Create the Python 3.6 container
+  docker_container:
+    name: python_3_6
+    image: python:3.6
+    state: present
+    command: /bin/bash
+

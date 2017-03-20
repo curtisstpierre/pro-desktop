@@ -1,0 +1,29 @@
+---
+- name: Pull the PostgreSQL 9.6 Docker image
+  docker_image:
+    name: postgres:9.6
+
+- name: Create the PostgreSQL data volume container
+  docker_container:
+    name: postgres_9_6_data
+    image: alpine:latest
+    state: present
+    command: /bin/true
+    volumes:
+      - /var/lib/postgresql/data
+
+- name: Run the PostgreSQL Docker container
+  docker_container:
+    name: postgres_9_6
+    image: postgres:9.6
+    state: started
+    restart_policy: on-failure
+    published_ports:
+      - 5432:5432
+    env:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data
+    volumes_from:
+      - postgres_9_6_data
+

@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  become: true
+  become_method: sudo
+  roles:
+    - base-tools
+    - docker
+    - docker-postgresql
+#   - docker-python36
+

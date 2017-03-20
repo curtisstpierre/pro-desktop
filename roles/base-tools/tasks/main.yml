@@ -1,0 +1,35 @@
+---
+- name: Add the PGDG apt repository 
+  apt_repository:
+    repo: deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main
+    state: present
+
+- name: Import the PGDG repository key
+  apt_key:
+    url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+
+- name: Update the apt cache
+  apt:
+    update_cache: yes
+
+- name: Install common tools
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - tree
+    - vim
+    - scrub
+    - python-pip
+    - postgresql-client-9.6
+    - htop
+    - xclip
+    - aescrypt
+
+- name: Install desktop tools
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - thunderbird
+

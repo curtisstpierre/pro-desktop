@@ -24,6 +24,7 @@
     - postgresql-client-9.6
     - htop
     - xclip
+    - curl
 
 - name: Install desktop tools
   apt:

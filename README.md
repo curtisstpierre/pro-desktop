@@ -16,6 +16,6 @@ Once you've got these prerequisites installed, set the provisioning to run
 periodically to stay in compliance, by setting your root crontab as so:
 
 ```
-0/30 * * * * * ansible-pull -U https://github.com/dgorley/pro-desktop.git
+0-59/30 * * * * ansible-pull -U https://github.com/dgorley/pro-desktop.git
 ```
 

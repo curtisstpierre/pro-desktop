@@ -28,6 +28,8 @@
     - jq
     - npm
     - taskwarrior
+    - virtualbox
+    - vagrant
 
 - name: Install desktop tools
   apt:

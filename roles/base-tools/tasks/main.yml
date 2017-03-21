@@ -25,6 +25,9 @@
     - htop
     - xclip
     - curl
+    - jq
+    - npm
+    - taskwarrior
 
 - name: Install desktop tools
   apt:

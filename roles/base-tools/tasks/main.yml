@@ -29,6 +29,7 @@
     - npm
     - taskwarrior
     - virtualbox
+    - virtualbox-qt
     - vagrant
 
 - name: Install desktop tools
